@@ -45,10 +45,8 @@ class LoggedController extends Controller
 
         if (auth()->attempt(['email' => $request->email, 'password' => $request->password])) {
             // return redirect()->route('dashboard');
-            if(auth()->user()->role_id === 3){
+            if(auth()->user()->role_id === 1){
                 return redirect()->route('dashboard');
-            }else{
-                return redirect()->route('admin.dasboard');
             }
         }
 

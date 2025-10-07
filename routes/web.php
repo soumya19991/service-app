@@ -24,6 +24,15 @@ Route::middleware('admin')->group(function () {
     Route::get('dashboard', function () {
         return view('admin.dashboard'); // create dashboard.blade.php
     })->name('dashboard');
+    Route::get('add-service', function () {
+        return view('admin.allservice.addservice'); // create dashboard.blade.php
+    })->name('add.service');
+    Route::get('all-service', function () { 
+        return view('admin.allservice.listservice'); // create dashboard.blade.php
+    })->name('all.service');
+    Route::get('edit-service/{id}', function ($id) {
+        return view('admin.allservice.editservice'); // create dashboard.blade.php
+    })->name('edit.service');
 });
 
 // Route::middleware('admin')->group(function () {

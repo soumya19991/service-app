@@ -6,22 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dashboard</title>
+   
 
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link href="./dist/libs/jsvectormap/dist/jsvectormap.css?1758770987" rel="stylesheet" />
-    <!-- END PAGE LEVEL STYLES -->
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="./dist/css/tabler.css?1758770987" rel="stylesheet" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PLUGINS STYLES -->
-    <link href="./dist/css/tabler-flags.css?1758770987" rel="stylesheet" />
-    <link href="./dist/css/tabler-socials.css?1758770987" rel="stylesheet" />
-    <link href="./dist/css/tabler-payments.css?1758770987" rel="stylesheet" />
-    <link href="./dist/css/tabler-vendors.css?1758770987" rel="stylesheet" />
-    <link href="./dist/css/tabler-marketing.css?1758770987" rel="stylesheet" />
-    <link href="./dist/css/tabler-themes.css?1758770987" rel="stylesheet" />
+    <!-- CSS files -->
+    <link href="{{ asset('assets/css/tabler.min.css?1692870487') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/tabler-flags.min.css?1692870487') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/tabler-payments.min.css?1692870487') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/tabler-vendors.min.css?1692870487') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/demo.min.css?1692870487') }}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <style>
         @import url('https://rsms.me/inter/inter.css');
 
@@ -37,7 +32,7 @@
 </head>
 
 <body>
-  <script src="./dist/js/tabler-theme.min.js?1758770987"></script>
+    <script src="{{ asset('admin/js/demo-theme.min.js?1684106062') }}"></script>
     <div class="page">
         @include('layout.admin.partials.sidebar')
         @yield('content')
@@ -54,7 +49,7 @@
     <script src="{{ asset('assets/js/tabler.min.js?1692870487') }}" defer></script>
     <script src="{{ asset('assets/js/demo.min.js?1692870487') }}" defer></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> --}}
-
+     
     @stack('js')
 </body>
 

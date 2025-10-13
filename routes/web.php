@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\Pagescontroller;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,21 +19,24 @@ use App\Http\Controllers\Pagescontroller;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('home', function () {
+    return view('frontend.home');
+});
 // Route::middleware('customer')->get('dashboard',[Pagescontroller::class, 'dashboard'])->name('dashboard');
 // Route::get('dashboard',[Pagescontroller::class, 'dashboard'])->name('dashboard');
 Route::middleware('admin')->group(function () {
     Route::get('dashboard', function () {
         return view('admin.dashboard'); // create dashboard.blade.php
     })->name('dashboard');
-    Route::get('add-service', function () {
-        return view('admin.allservice.addservice'); // create dashboard.blade.php
-    })->name('add.service');
-    Route::get('all-service', function () { 
-        return view('admin.allservice.listservice'); // create dashboard.blade.php
-    })->name('all.service');
-    Route::get('edit-service/{id}', function ($id) {
-        return view('admin.allservice.editservice'); // create dashboard.blade.php
-    })->name('edit.service');
+    Route::get('service-index',[ServiceController::class, 'index'])->name('service.index');
+    Route::get('add-service', [ServiceController::class, 'add'])->name('add.service');
+    Route::post('store-service', [ServiceController::class, 'store'])->name('store.service');
+    Route::get('edit-service/{id}', [ServiceController::class, 'edit'])->name('edit.service');
+    Route::put('update-service/{id}', [ServiceController::class, 'update'])->name('update.service');
+    Route::put('update-status/{id}', [ServiceController::class, 'updateStatus'])->name('update.status');
+    Route::delete('delete-service/{id}', [ServiceController::class, 'destroy'])->name('delete.service');
+        
+
 });
 
 // Route::middleware('admin')->group(function () {

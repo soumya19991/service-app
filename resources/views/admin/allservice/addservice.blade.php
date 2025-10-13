@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="card-body p-4">
-                    <form action="#" method="POST" id="serviceForm" novalidate>
+                    <form action="{{ route('store.service') }}" method="POST" id="serviceForm" novalidate>
                         @csrf
 
                         {{-- Service Name --}}

@@ -7,6 +7,9 @@
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@tabler/core@latest/dist/css/tabler.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    
 
     <!-- Custom CSS -->
     <style>
@@ -19,6 +22,7 @@
             .hero-section { padding: 60px 20px; font-size: 14px; }
         }
     </style>
+    @stack('styles')
 </head>
 <body>
 
@@ -30,10 +34,11 @@
 
     <!-- Popup Form -->
     @include('frontend.popup-form')
-
+    @include('frontend.register-vender')
     <!-- Footer -->
     @include('frontend.layouts.footer')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @stack('scripts')
 </body>
 </html>

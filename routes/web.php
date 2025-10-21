@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\Pagescontroller;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\VenderDetailsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +19,10 @@ use App\Http\Controllers\ServiceController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('home', function () {
-    return view('frontend.home');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomepageController::class, 'index'])->name('home');
 // Route::middleware('customer')->get('dashboard',[Pagescontroller::class, 'dashboard'])->name('dashboard');
 // Route::get('dashboard',[Pagescontroller::class, 'dashboard'])->name('dashboard');
 Route::middleware('admin')->group(function () {
@@ -34,7 +35,11 @@ Route::middleware('admin')->group(function () {
     Route::get('edit-service/{id}', [ServiceController::class, 'edit'])->name('edit.service');
     Route::put('update-service/{id}', [ServiceController::class, 'update'])->name('update.service');
     Route::put('update-status/{id}', [ServiceController::class, 'updateStatus'])->name('update.status');
+    Route::put('update-popular/{id}', [ServiceController::class, 'updatePopular'])->name('update.popular');
     Route::delete('delete-service/{id}', [ServiceController::class, 'destroy'])->name('delete.service');
+
+    Route::get('vender-list',[VenderDetailsController::class, 'venderList'])->name('vender.list');
+  
         
 
 });
@@ -48,4 +53,7 @@ Route::get('register',[LoggedController::class, 'register'])->name('register');
 Route::post('store/user',[LoggedController::class, 'storeUser'])->name('store.user');
 Route::get('login',[LoggedController::class, 'login'])->name('login');
 Route::post('logged/login',[LoggedController::class, 'logged_login'])->name('logged.login');
-Route::post('logged/logout',[LoggedController::class, 'logged_logout'])->name('logged.logout'); 
+Route::post('logged/logout',[LoggedController::class, 'logged_logout'])->name('logged.logout');
+
+
+Route::post('store/vender',[VenderDetailsController::class, 'storeVender'])->name('store.vender');

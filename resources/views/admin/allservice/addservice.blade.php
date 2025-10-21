@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="card-body p-4">
-                    <form action="{{ route('store.service') }}" method="POST" id="serviceForm" novalidate>
+                    <form action="{{ route('store.service') }}" method="POST" id="serviceForm" enctype="multipart/form-data" novalidate>
                         @csrf
 
                         {{-- Service Name --}}
@@ -27,6 +27,15 @@
                             <label class="form-label fw-semibold">Description</label>
                             <textarea name="description" class="form-control rounded-4 shadow-sm" rows="4"
                                 placeholder="Write a short description..." required></textarea>
+                        </div>
+
+                        {{-- Image Upload --}}
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Service Image</label>
+                            <input type="file" name="image"
+                                class="form-control form-control-lg rounded-pill shadow-sm"
+                                accept="image/*" required>
+                            <small class="text-muted d-block mt-1">Allowed formats: JPG, PNG, JPEG. Max size: 2MB</small>
                         </div>
 
                         <div class="text-center">
@@ -49,12 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("serviceForm");
     const inputs = form.querySelectorAll("input[required], textarea[required]");
 
-    // On form submit
     form.addEventListener("submit", function (e) {
         let valid = true;
 
         inputs.forEach(input => {
-            const value = input.value.trim();
+            const value = input.type === "file" ? input.files.length : input.value.trim();
 
             if (!value) {
                 valid = false;
@@ -67,17 +75,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!valid) e.preventDefault();
     });
 
-    // Live validation — remove error when user starts typing
     inputs.forEach(input => {
         input.addEventListener("input", function () {
-            if (this.value.trim()) {
+            if (this.value.trim() || (this.type === "file" && this.files.length > 0)) {
                 removeError(this);
             }
         });
     });
 
     function showError(input, message) {
-        removeError(input); // remove existing first
+        removeError(input);
         input.classList.add("is-invalid");
 
         const error = document.createElement("div");

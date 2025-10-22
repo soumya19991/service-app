@@ -43,8 +43,8 @@ class VenderDetailsController extends Controller
     }
     public function venderList()
     {
-        $venders = VenderDetails::with(['user', 'service'])->orderBy('id', 'asc')->paginate(10);
-        // return $venders;
-        return view('admin.venderindex', compact('venders'));
+        $vendors = VenderDetails::with(['user', 'service'])->orderBy('id', 'asc')->paginate(10);
+        // return $vendors;
+        return view('admin.venderindex', compact('vendors'));
     }
 }

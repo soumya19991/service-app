@@ -36,10 +36,10 @@ class ServiceRequestController extends Controller
     }
     public function serviceRequestList()
     {
-        $serviceRequests = ServiceRequest::with(['service', 'transferUser'])->get();
-        $venders = VenderDetails::with('user')->get();
-    // return $venders;
-        return view('admin.service_request_index',compact('serviceRequests','venders'));
+        $serviceRequests = ServiceRequest::with(['service', 'transferUser'])->paginate(10);
+        $vendors = VenderDetails::with('user')->get();
+    // return $vendors;
+        return view('admin.service_request_index',compact('serviceRequests','vendors'));
     }
     public function serviceTransfer(Request $request, $id)
     {

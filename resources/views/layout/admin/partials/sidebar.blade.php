@@ -62,7 +62,7 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                          Venders List
+                          vendors List
                         </span>
                     </a>
                 </li>

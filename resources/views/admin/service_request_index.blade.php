@@ -83,7 +83,7 @@
                 <div class="card border-0 shadow-lg rounded-4">
                     <div class="card-header bg-gradient rounded-top-4 d-flex justify-content-between align-items-center"
                         style="background: linear-gradient(135deg, #4e73df, #1cc88a); color: #ffd700;">
-                        <h4 class="mb-0 fw-semibold">All Venders</h4>
+                        <h4 class="mb-0 fw-semibold">All vendors</h4>
 
                     </div>
 
@@ -125,9 +125,9 @@
                                 </tbody>
                             </table>
 
-                            {{-- <div class="d-flex justify-content-center mt-4">
+                            <div class="d-flex justify-content-center mt-4">
                                 {{ $serviceRequests->links('pagination::bootstrap-5') }}
-                            </div> --}}
+                            </div>
 
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                             <label class="form-label fw-semibold text-dark">Select Vendor</label>
                             <select name="transfer_at" class="form-select border-warning shadow-sm" required>
                                 <option value="">-- Select Vendor --</option>
-                                @foreach ($venders as $vender)
+                                @foreach ($vendors as $vender)
                                     @if ($vender->pin_code == $serviceRequest->pin_code && $vender->service_id == $serviceRequest->service_id)
                                         <option value="{{ $vender->user->id }}">
                                             {{ $vender->user->name }} ({{ $vender->pin_code }})

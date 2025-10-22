@@ -6,7 +6,7 @@
                 <h5 class="modal-title" id="serviceModalLabel">Request a Service</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ url('/service-request') }}" method="POST" class="p-4">
+            <form action="{{ route('store.service.request') }}" method="POST" class="p-4">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label fw-bold">Full Name</label>
@@ -25,12 +25,12 @@
                 </div>
                 <div class="mb-3">
                     <label for="pincode" class="form-label fw-bold">Pin Code</label>
-                    <input type="text" class="form-control" id="pincode" name="pincode"
+                    <input type="text" class="form-control" id="pincode" name="pin_code"
                         placeholder="Enter your pin code" required>
                 </div>
                 <div class="mb-3">
                     <label for="service" class="form-label fw-bold">Service Required</label>
-                    <select class="form-select" id="service" name="service" required>
+                    <select class="form-select" id="service" name="service_id" required>
                         <option value="" disabled selected>Select a Service</option>
                          @foreach ($services as $service)
                             <option value="{{ $service->id}}">{{ $service->name }}</option>

@@ -5,6 +5,7 @@ use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\Pagescontroller;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\ServiceRequestController;
 use App\Http\Controllers\VenderDetailsController;
 
 
@@ -39,6 +40,8 @@ Route::middleware('admin')->group(function () {
     Route::delete('delete-service/{id}', [ServiceController::class, 'destroy'])->name('delete.service');
 
     Route::get('vender-list',[VenderDetailsController::class, 'venderList'])->name('vender.list');
+    Route::get('service-request-list',[ServiceRequestController::class, 'serviceRequestList'])->name('service.request.list');
+    Route::put('service-transfer/{id}',[ServiceRequestController::class, 'serviceTransfer'])->name('service.transfer');
   
         
 
@@ -57,3 +60,4 @@ Route::post('logged/logout',[LoggedController::class, 'logged_logout'])->name('l
 
 
 Route::post('store/vender',[VenderDetailsController::class, 'storeVender'])->name('store.vender');
+Route::post('store/service-request',[ServiceRequestController::class, 'storeServiceRequest'])->name('store.service.request');

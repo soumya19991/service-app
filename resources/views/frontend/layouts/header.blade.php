@@ -38,11 +38,11 @@
                     <a class="nav-link text-dark fw-semibold" href="#customers">Success Stories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-dark text-warning ms-2 fw-bold" data-bs-toggle="modal"
+                    <a class="nav-link btn text-warning ms-2 fw-bold" data-bs-toggle="modal"
                         data-bs-target="#serviceModal">Request Service</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-light text-dark ms-2 fw-bold" href="#" data-bs-toggle="modal"
+                    <a class="nav-link  text-dark ms-2 fw-bold" href="#" data-bs-toggle="modal"
                         data-bs-target="#registerModal">
                         Vendor Register
                     </a>

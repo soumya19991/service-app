@@ -1,13 +1,13 @@
 @extends('layout.admin.app')
 @push('css')
-<style>
-    .pagination {
-        
-        gap: 0.5rem;
-        margin-left: 1rem;
+    <style>
+        .pagination {
 
-    }
-</style>
+            gap: 0.5rem;
+            margin-left: 1rem;
+
+        }
+    </style>
 @endpush
 @section('content')
     {{-- @php
@@ -60,10 +60,8 @@
                 <div class="card border-0 shadow-lg rounded-4">
                     <div class="card-header bg-gradient rounded-top-4 d-flex justify-content-between align-items-center"
                         style="background: linear-gradient(135deg, #4e73df, #1cc88a); color: #ffd700;">
-                        <h4 class="mb-0 fw-semibold">All Services</h4>
-                        <a href="{{ route('add.service') }}" class="btn btn-sm btn-light fw-semibold">
-                            <i class="fa-solid fa-plus"></i> Add Service
-                        </a>
+                        <h4 class="mb-0 fw-semibold">All Venders</h4>
+                        
                     </div>
 
                     <div class="card-body p-4">
@@ -71,66 +69,32 @@
                             <table class="table table-striped table-hover align-middle">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Service Name</th>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Popularity</th>
-                                        <th scope="col">Action</th>
+                                        <th>#</th>
+                                        <th>Vendor Name</th>
+                                        <th>Phone</th>
+                                        <th>Pincode</th>
+                                        <th>City</th>
+                                        <th>Service</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($services as $service)
+                                    @foreach ($venders as $vender)
                                         <tr>
-                                            <th scope="row">{{ $loop->iteration }}</th>
-                                            <td>{{ $service->name }}</td>
-                                            <td>{{ $service->description }}</td>
-                                            <td>
-                                                <form action="{{ route('update.status', $service->id) }}" method="POST"
-                                                    class="d-inline">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <button type="submit"
-                                                        class="badge border-0 {{ $service->status == 1 ? 'bg-success' : 'bg-secondary' }} status-toggle-btn">
-                                                        {{ $service->status == 1 ? 'Active' : 'Inactive' }}
-                                                    </button>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                <form action="{{ route('update.popular', $service->id) }}" method="POST"
-                                                    class="d-inline">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <button type="submit"
-                                                        class="badge border-0 {{ $service->popular == 1 ? 'bg-success' : 'bg-secondary' }} status-toggle-btn">
-                                                        {{ $service->popular == 1 ? 'Popular' : 'Not Popular' }}
-                                                    </button>
-                                                </form>
-                                            </td>
-                                            <td>
-                                                {{-- Edit Button --}}
-                                                <a href="{{ route('edit.service', $service->id) }}"
-                                                    class="btn btn-sm btn-outline-primary" title="Edit">
-                                                    <i class="fa-solid fa-pen-to-square"></i>
-                                                </a>
-                                                <form action="{{ route('delete.service', $service->id) }}" method="POST"
-                                                    class="d-inline"
-                                                    onsubmit="return confirm('Are you sure you want to delete this service?');">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-outline-danger">
-                                                        <i class="fa-solid fa-trash-can"></i>
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $vender->user->name ?? 'N/A' }}</td>
+                                            <td>{{ $vender->mobile_number }}</td>
+                                            <td>{{ $vender->pin_code }}</td>
+                                            <td>{{ $vender->city }}</td>
+                                            <td>{{ $vender->service->name ?? 'N/A' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+
                             <div class="d-flex justify-content-center mt-4">
-                                {{ $services->links('pagination::bootstrap-5') }}
+                                {{ $venders->links('pagination::bootstrap-5') }}
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

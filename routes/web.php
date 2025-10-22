@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\Pagescontroller;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\VenderDetailsController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,24 +19,29 @@ use App\Http\Controllers\Pagescontroller;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomepageController::class, 'index'])->name('home');
 // Route::middleware('customer')->get('dashboard',[Pagescontroller::class, 'dashboard'])->name('dashboard');
 // Route::get('dashboard',[Pagescontroller::class, 'dashboard'])->name('dashboard');
 Route::middleware('admin')->group(function () {
     Route::get('dashboard', function () {
         return view('admin.dashboard'); // create dashboard.blade.php
     })->name('dashboard');
-    Route::get('add-service', function () {
-        return view('admin.allservice.addservice'); // create dashboard.blade.php
-    })->name('add.service');
-    Route::get('all-service', function () { 
-        return view('admin.allservice.listservice'); // create dashboard.blade.php
-    })->name('all.service');
-    Route::get('edit-service/{id}', function ($id) {
-        return view('admin.allservice.editservice'); // create dashboard.blade.php
-    })->name('edit.service');
+    Route::get('service-index',[ServiceController::class, 'index'])->name('service.index');
+    Route::get('add-service', [ServiceController::class, 'add'])->name('add.service');
+    Route::post('store-service', [ServiceController::class, 'store'])->name('store.service');
+    Route::get('edit-service/{id}', [ServiceController::class, 'edit'])->name('edit.service');
+    Route::put('update-service/{id}', [ServiceController::class, 'update'])->name('update.service');
+    Route::put('update-status/{id}', [ServiceController::class, 'updateStatus'])->name('update.status');
+    Route::put('update-popular/{id}', [ServiceController::class, 'updatePopular'])->name('update.popular');
+    Route::delete('delete-service/{id}', [ServiceController::class, 'destroy'])->name('delete.service');
+
+    Route::get('vender-list',[VenderDetailsController::class, 'venderList'])->name('vender.list');
+  
+        
+
 });
 
 // Route::middleware('admin')->group(function () {
@@ -44,4 +53,7 @@ Route::get('register',[LoggedController::class, 'register'])->name('register');
 Route::post('store/user',[LoggedController::class, 'storeUser'])->name('store.user');
 Route::get('login',[LoggedController::class, 'login'])->name('login');
 Route::post('logged/login',[LoggedController::class, 'logged_login'])->name('logged.login');
-Route::post('logged/logout',[LoggedController::class, 'logged_logout'])->name('logged.logout'); 
+Route::post('logged/logout',[LoggedController::class, 'logged_logout'])->name('logged.logout');
+
+
+Route::post('store/vender',[VenderDetailsController::class, 'storeVender'])->name('store.vender');

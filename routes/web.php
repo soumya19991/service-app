@@ -5,7 +5,7 @@ use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\Pagescontroller;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceRequestController;
-use App\Http\Controllers\vendorDetailsController;
+use App\Http\Controllers\venderDetailsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +38,7 @@ Route::middleware('admin')->group(function () {
     Route::put('update-popular/{id}', [ServiceController::class, 'updatePopular'])->name('update.popular');
     Route::delete('delete-service/{id}', [ServiceController::class, 'destroy'])->name('delete.service');
 
-    Route::get('vendor-list', [vendorDetailsController::class, 'vendorList'])->name('vendor.list');
+    Route::get('vender-list', [venderDetailsController::class, 'venderList'])->name('vender.list');
     Route::get('service-request-list', [ServiceRequestController::class, 'serviceRequestList'])->name('service.request.list');
     Route::put('service-transfer/{id}', [ServiceRequestController::class, 'serviceTransfer'])->name('service.transfer');
 
@@ -55,5 +55,5 @@ Route::get('login', [LoggedController::class, 'login'])->name('login');
 Route::post('logged/login', [LoggedController::class, 'logged_login'])->name('logged.login');
 Route::post('logged/logout', [LoggedController::class, 'logged_logout'])->name('logged.logout');
 
-Route::post('store/vendor', [vendorDetailsController::class, 'storevendor'])->name('store.vendor');
+Route::post('store/vender', [venderDetailsController::class, 'storevender'])->name('store.vender');
 Route::post('store/service-request', [ServiceRequestController::class, 'storeServiceRequest'])->name('store.service.request');

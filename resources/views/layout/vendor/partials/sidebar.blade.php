@@ -7,8 +7,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark">
             <a href=".">
-                <img src="#" width="110" height="110" alt="logo"
-                    class="navbar-brand-image">
+                <img src="#" width="110" height="110" alt="logo" class="navbar-brand-image">
             </a>
         </h1>
 
@@ -45,12 +44,12 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                          Service
+                            Service
                         </span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('vendor.list') }}">
+                    <a class="nav-link d-flex align-items-center gap-2" href="{{ route('vender.list') }}">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -62,7 +61,7 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                          vendors List
+                            venders List
                         </span>
                     </a>
                 </li>
@@ -96,15 +95,14 @@
                             </svg>
                         </span>
                         <span class="nav-link-title">
-                           Data Lead 
+                            Data Lead
                         </span>
                     </a>
                 </li>
 
-                
+
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2"
-                        href="#">
+                    <a class="nav-link d-flex align-items-center gap-2" href="#">
                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                             <!-- Tabler "User Circle" icon for Profile -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle"
@@ -141,7 +139,8 @@
                         </span>
                     </a>
 
-                    <form id="logout-form" action="{{ route('logged.logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('logged.logout') }}" method="POST"
+                        style="display: none;">
                         @csrf
                     </form>
                 </li>

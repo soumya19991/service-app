@@ -18,7 +18,7 @@
     <link href="{{ asset('assets/css/tabler.min.css?1692870487') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/tabler-flags.min.css?1692870487') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/tabler-payments.min.css?1692870487') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/tabler-vendors.min.css?1692870487') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/tabler-venders.min.css?1692870487') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/demo.min.css?1692870487') }}" rel="stylesheet" />
     <style>
         @import url('https://rsms.me/inter/inter.css');
@@ -29,7 +29,7 @@
 
         body {
             font-feature-settings: "cv03", "cv04", "cv11";
-             /* background: linear-gradient(135deg, #4e73df 0%, #224abe 100%); */
+            /* background: linear-gradient(135deg, #4e73df 0%, #224abe 100%); */
 
 
 
@@ -90,7 +90,7 @@
                         <div class="form-footer">
                             <button type="submit" class="btn btn-primary w-100">Sign in</button>
                             <div class="hr-text">or</div>
-                            
+
                         </div>
 
                     </form>

@@ -83,7 +83,7 @@
                 <div class="card border-0 shadow-lg rounded-4">
                     <div class="card-header bg-gradient rounded-top-4 d-flex justify-content-between align-items-center"
                         style="background: linear-gradient(135deg, #4e73df, #1cc88a); color: #ffd700;">
-                        <h4 class="mb-0 fw-semibold">All vendors</h4>
+                        <h4 class="mb-0 fw-semibold">All venders</h4>
 
                     </div>
 
@@ -99,7 +99,7 @@
                                         <th>Pincode</th>
                                         <th>City</th>
                                         <th>Request Service</th>
-                                        <th>Transfer vendor Name</th>
+                                        <th>Transfer vender Name</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -156,13 +156,13 @@
                     @method('PUT')
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label class="form-label fw-semibold text-dark">Select Vendor</label>
+                            <label class="form-label fw-semibold text-dark">Select vender</label>
                             <select name="transfer_at" class="form-select border-warning shadow-sm" required>
-                                <option value="">-- Select Vendor --</option>
-                                @foreach ($vendors as $vendor)
-                                    @if ($vendor->pin_code == $serviceRequest->pin_code && $vendor->service_id == $serviceRequest->service_id)
-                                        <option value="{{ $vendor->user->id }}">
-                                            {{ $vendor->user->name }} ({{ $vendor->pin_code }})
+                                <option value="">-- Select vender --</option>
+                                @foreach ($venders as $vender)
+                                    @if ($vender->pin_code == $serviceRequest->pin_code && $vender->service_id == $serviceRequest->service_id)
+                                        <option value="{{ $vender->user->id }}">
+                                            {{ $vender->user->name }} ({{ $vender->pin_code }})
                                         </option>
                                     @endif
                                 @endforeach

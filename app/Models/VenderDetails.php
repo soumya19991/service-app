@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class vendorDetails extends Model
+class venderDetails extends Model
 {
     use HasFactory;
 
@@ -17,8 +17,7 @@ class vendorDetails extends Model
         'city',
     ];
 
-
-     // ✅ Relationship with User
+    // ✅ Relationship with User
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -29,5 +28,4 @@ class vendorDetails extends Model
     {
         return $this->belongsTo(Service::class, 'service_id');
     }
-    
 }

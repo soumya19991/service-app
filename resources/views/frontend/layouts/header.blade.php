@@ -16,7 +16,7 @@
                     <a class="nav-link btn btn-dark text-warning ms-2 fw-bold" data-bs-toggle="modal" data-bs-target="#serviceModal">Request Service</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-light text-dark ms-2 fw-bold" href="{{ url('/register') }}">Vendor Register</a>
+                    <a class="nav-link btn btn-light text-dark ms-2 fw-bold" href="{{ url('/register') }}">vender Register</a>
                 </li>
             </ul>
         </div>
@@ -44,7 +44,7 @@
                 <li class="nav-item">
                     <a class="nav-link  text-dark ms-2 fw-bold" href="#" data-bs-toggle="modal"
                         data-bs-target="#registerModal">
-                        Vendor Register
+                        vender Register
                     </a>
 
                 </li>

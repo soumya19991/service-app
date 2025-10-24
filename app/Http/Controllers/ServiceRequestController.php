@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use  App\Models\ServiceRequest;
 use App\Models\User;
-use App\Models\VenderDetails;
+use App\Models\venderDetails;
 
 class ServiceRequestController extends Controller
 {
@@ -37,9 +37,9 @@ class ServiceRequestController extends Controller
     public function serviceRequestList()
     {
         $serviceRequests = ServiceRequest::with(['service', 'transferUser'])->paginate(10);
-        $vendors = VenderDetails::with('user')->get();
-    // return $vendors;
-        return view('admin.service_request_index',compact('serviceRequests','vendors'));
+        $venders = venderDetails::with('user')->get();
+    // return $venders;
+        return view('admin.service_request_index',compact('serviceRequests','venders'));
     }
     public function serviceTransfer(Request $request, $id)
     {

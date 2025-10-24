@@ -103,7 +103,7 @@
                 <!-- Buttons -->
                 <div class="mt-4">
                     <a href="#" class="btn btn-dark btn-lg me-3" data-bs-toggle="modal" data-bs-target="#serviceModal">Request a Service</a>
-                    <a href="{{ url('/register') }}" class="btn btn-light btn-lg">Vendor Register</a>
+                    <a href="{{ url('/register') }}" class="btn btn-light btn-lg">vender Register</a>
                 </div>
             </div>
 
@@ -150,7 +150,7 @@
             <div class="text-center mt-4">
                 <a href="#" class="btn btn-dark btn-lg me-3" data-bs-toggle="modal"
                     data-bs-target="#serviceModal">Request a Service</a>
-                <a href="{{ url('/register') }}" class="btn btn-light btn-lg border">Vendor Register</a>
+                <a href="{{ url('/register') }}" class="btn btn-light btn-lg border">vender Register</a>
             </div>
         </div>
     </section> --}}
@@ -177,7 +177,7 @@
                 </a>
                 <a href="#" class="btn btn-light btn-lg border" data-bs-toggle="modal"
                     data-bs-target="#registerModal">
-                    Vendor Register
+                    vender Register
                 </a>
             </div>
         </div>
@@ -230,7 +230,7 @@
         </div>
     </section>
 
-    
+
 
 
     <!-- About Us Section -->

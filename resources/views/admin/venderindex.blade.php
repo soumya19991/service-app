@@ -60,8 +60,8 @@
                 <div class="card border-0 shadow-lg rounded-4">
                     <div class="card-header bg-gradient rounded-top-4 d-flex justify-content-between align-items-center"
                         style="background: linear-gradient(135deg, #4e73df, #1cc88a); color: #ffd700;">
-                        <h4 class="mb-0 fw-semibold">All vendors</h4>
-                        
+                        <h4 class="mb-0 fw-semibold">All venders</h4>
+
                     </div>
 
                     <div class="card-body p-4">
@@ -70,7 +70,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Vendor Name</th>
+                                        <th>vender Name</th>
                                         <th>Phone</th>
                                         <th>Pincode</th>
                                         <th>City</th>
@@ -78,7 +78,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($vendors as $vender)
+                                    @foreach ($venders as $vender)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $vender->user->name ?? 'N/A' }}</td>
@@ -92,7 +92,7 @@
                             </table>
 
                             <div class="d-flex justify-content-center mt-4">
-                                {{ $vendors->links('pagination::bootstrap-5') }}
+                                {{ $venders->links('pagination::bootstrap-5') }}
                             </div>
 
                         </div>

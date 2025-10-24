@@ -10,7 +10,7 @@
     <link href="{{ asset('assets/css/tabler.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/tabler-flags.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/tabler-payments.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('assets/css/tabler-vendors.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/tabler-venders.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/css/demo.min.css') }}" rel="stylesheet" />
     <style>
         @import url('https://rsms.me/inter/inter.css');

@@ -78,14 +78,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($vendors as $vender)
+                                    @foreach ($vendors as $vendor)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $vender->user->name ?? 'N/A' }}</td>
-                                            <td>{{ $vender->mobile_number }}</td>
-                                            <td>{{ $vender->pin_code }}</td>
-                                            <td>{{ $vender->city }}</td>
-                                            <td>{{ $vender->service->name ?? 'N/A' }}</td>
+                                            <td>{{ $vendor->user->name ?? 'N/A' }}</td>
+                                            <td>{{ $vendor->mobile_number }}</td>
+                                            <td>{{ $vendor->pin_code }}</td>
+                                            <td>{{ $vendor->city }}</td>
+                                            <td>{{ $vendor->service->name ?? 'N/A' }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

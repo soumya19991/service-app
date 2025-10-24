@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\VenderDetails;
+use App\Models\vendorDetails;
 use Illuminate\Http\Request;
 use App\Models\Service;
-// use App\models\venderDetails;
+// use App\models\vendorDetails;
 
-class VenderDetailsController extends Controller
+class vendorDetailsController extends Controller
 {
-    public function storeVender(Request $request)
+    public function storevendor(Request $request)
     {
         // return $request->all();
         $this->validate($request, [
@@ -31,7 +31,7 @@ class VenderDetailsController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        VenderDetails::create([
+        vendorDetails::create([
             'user_id' => User::latest()->first()->id,
             'service_id' => $request->service,
             'mobile_number' => $request->phone,
@@ -39,12 +39,12 @@ class VenderDetailsController extends Controller
             'city' => $request->city,
         ]);
 
-        return redirect()->back()->with('success', 'Vender details saved successfully.');
+        return redirect()->back()->with('success', 'vendor details saved successfully.');
     }
-    public function venderList()
+    public function vendorList()
     {
-        $vendors = VenderDetails::with(['user', 'service'])->orderBy('id', 'asc')->paginate(10);
+        $vendors = vendorDetails::with(['user', 'service'])->orderBy('id', 'asc')->paginate(10);
         // return $vendors;
-        return view('admin.venderindex', compact('vendors'));
+        return view('admin.vendorindex', compact('vendors'));
     }
 }

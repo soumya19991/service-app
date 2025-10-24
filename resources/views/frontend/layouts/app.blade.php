@@ -34,7 +34,7 @@
 
     <!-- Popup Form -->
     @include('frontend.popup-form')
-    @include('frontend.register-vender')
+    @include('frontend.register-vendor')
     <!-- Footer -->
     @include('frontend.layouts.footer')
 

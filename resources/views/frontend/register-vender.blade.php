@@ -7,7 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-4">
-                <form action="{{ route('store.vender') }}" method="post" autocomplete="off">
+                <form action="{{ route('store.vendor') }}" method="post" autocomplete="off">
                     @csrf
                     <div class="row g-3">
 

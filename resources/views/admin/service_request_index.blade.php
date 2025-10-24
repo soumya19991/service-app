@@ -99,7 +99,7 @@
                                         <th>Pincode</th>
                                         <th>City</th>
                                         <th>Request Service</th>
-                                        <th>Transfer Vender Name</th>
+                                        <th>Transfer vendor Name</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -159,10 +159,10 @@
                             <label class="form-label fw-semibold text-dark">Select Vendor</label>
                             <select name="transfer_at" class="form-select border-warning shadow-sm" required>
                                 <option value="">-- Select Vendor --</option>
-                                @foreach ($vendors as $vender)
-                                    @if ($vender->pin_code == $serviceRequest->pin_code && $vender->service_id == $serviceRequest->service_id)
-                                        <option value="{{ $vender->user->id }}">
-                                            {{ $vender->user->name }} ({{ $vender->pin_code }})
+                                @foreach ($vendors as $vendor)
+                                    @if ($vendor->pin_code == $serviceRequest->pin_code && $vendor->service_id == $serviceRequest->service_id)
+                                        <option value="{{ $vendor->user->id }}">
+                                            {{ $vendor->user->name }} ({{ $vendor->pin_code }})
                                         </option>
                                     @endif
                                 @endforeach
